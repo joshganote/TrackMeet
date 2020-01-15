@@ -6,6 +6,11 @@ class RegisterPage extends Component {
   state = {
     username: '',
     password: '',
+    street_address: '',
+    city: '',
+    state: '',
+    zipcode: '',
+    role_id: '',
   };
 
   registerUser = (event) => {
@@ -17,6 +22,11 @@ class RegisterPage extends Component {
         payload: {
           username: this.state.username,
           password: this.state.password,
+          street_address: this.state.street_address,
+          city: this.state.city,
+          state: this.state.state,
+          zipcode: this.state.zipcode,
+          role_id: this.state.role_id,
         },
       });
     } else {
@@ -62,6 +72,61 @@ class RegisterPage extends Component {
                 name="password"
                 value={this.state.password}
                 onChange={this.handleInputChangeFor('password')}
+              />
+            </label>
+          </div>
+          <div>
+            <label htmlFor="street_address">
+              Street Address:
+              <input
+                type="text"
+                name="street_address"
+                value={this.state.street_address}
+                onChange={this.handleInputChangeFor('street_address')}
+              />
+            </label>
+          </div>
+          <div>
+            <label htmlFor="city">
+              City:
+              <input
+                type="text"
+                name="city"
+                value={this.state.city}
+                onChange={this.handleInputChangeFor('city')}
+              />
+            </label>
+          </div>
+          <div>
+            <label htmlFor="state">
+              State:
+              <input
+                type="text"
+                name="state"
+                value={this.state.state}
+                onChange={this.handleInputChangeFor('state')}
+              />
+            </label>
+          </div>
+          <div>
+            <label htmlFor="zipcode">
+              Zip Code:
+              <input
+                type="number"
+                name="zipcode"
+                value={this.state.zipcode}
+                onChange={this.handleInputChangeFor('zipcode')}
+              />
+            </label>
+          </div>
+          <div>
+            <label htmlFor="role_id">
+              Role ID:
+              <input
+                type="number"
+                name="role_id"
+                value={this.state.role_id}
+                onChange={this.handleInputChangeFor('role_id')}
               />
             </label>
           </div>
