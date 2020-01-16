@@ -19,6 +19,12 @@ import InfoPage from '../InfoPage/InfoPage';
 import LandingPage from '../LandingPage/LandingPage';
 import LoginPage from '../LoginPage/LoginPage';
 import RegisterPage from '../RegisterPage/RegisterPage';
+import featureProducer from '../Features/Producer/Producer';
+import featureGraphic from '../Features/Graphic/Graphic';
+import featureVideo from '../Features/Video/Video';
+import Contact from '../Contact/Contact/Contact';
+
+
 
 import './App.css';
 
@@ -46,6 +52,26 @@ class App extends Component {
               exact
               path="/home"
               component={LandingPage}
+            />
+            <Route
+              exact
+              path="/features/producer"
+              component={featureProducer}
+            />
+            <Route
+              exact
+              path="/features/graphic-designer"
+              component={featureGraphic}
+            />
+            <Route
+              exact
+              path="/features/videographer"
+              component={featureVideo}
+            />
+            <Route
+              exact
+              path="/contact"
+              component={Contact}
             />
             {/* For protected routes, the view could show one of several things on the same route.
             Visiting localhost:3000/user will show the UserPage if the user is logged in.
