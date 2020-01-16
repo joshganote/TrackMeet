@@ -31,6 +31,10 @@ class LandingPage extends Component {
             [propertyName]: event.target.value,
         });
     }
+    // Need to create dispatch route. Not high priority 
+    sendContactMessage = (event) => {
+        this.props.dispatch({});
+    }
 
     onLogin = (event) => {
         this.props.history.push('/login');
@@ -140,6 +144,9 @@ class LandingPage extends Component {
                                 onChange={this.handleInputChangeFor('contact')}
                             />
                         </label>
+                    </div>
+                    <div>
+                        <button onClick={this.sendContactMessage}>Send</button>
                     </div>
                 </div>
             </div>
