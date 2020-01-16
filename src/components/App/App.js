@@ -22,9 +22,9 @@ import RegisterPage from '../RegisterPage/RegisterPage';
 import featureProducer from '../Features/Producer/Producer';
 import featureGraphic from '../Features/Graphic/Graphic';
 import featureVideo from '../Features/Video/Video';
-import Contact from '../Contact/Contact/Contact';
-
-
+import Contact from '../Contact/Contact';
+import Messages from '../Message/Message';
+import Profile from '../Profile/Profile';
 
 import './App.css';
 
@@ -70,8 +70,18 @@ class App extends Component {
             />
             <Route
               exact
+              path="/messages"
+              component={Messages}
+            />
+            <Route
+              exact
               path="/contact"
               component={Contact}
+            />
+            <Route
+              exact
+              path="/profile"
+              component={Profile}
             />
             {/* For protected routes, the view could show one of several things on the same route.
             Visiting localhost:3000/user will show the UserPage if the user is logged in.
