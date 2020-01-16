@@ -2,34 +2,43 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import mapStoreToProps from '../../redux/mapStoreToProps';
 
-import './LandingPage.css';
+// Material UI
+// import CheckCircleOutlineIcon from '@material-ui/icons/CheckCircleOutline';
+{/* <IconButton>
+                        <CheckCircleOutlineIcon />
+                    </IconButton>  */}
 
 class LandingPage extends Component {
     state = {
-        heading: 'Class Component',
+        heading: 'TrackMeet',
+        team: 'Meet Your Team',
     };
 
     onLogin = (event) => {
         this.props.history.push('/login');
     }
+    producerRole = (event) => {
+        this.props.history.push('/features/producer');
+    }
+    graphicRole = (event) => {
+        this.props.history.push('/features/graphic-designer');
+    }
+    videoRole = (event) => {
+        this.props.history.push('/features/videographer');
+    }
 
     render() {
         return (
             <div className="container">
-                <h2>{this.state.heading}</h2>
+                <h1>{this.state.heading}</h1>
 
                 <div className="grid">
                     <div className="grid-col grid-col_8">
+                        <h2>Release Yourself</h2>
                         <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur id felis metus. Vestibulum et pulvinar tortor. Morbi pharetra lacus ut ex molestie blandit. Etiam et turpis sit amet risus mollis interdum. Suspendisse et justo vitae metus bibendum fringilla sed sed justo. Aliquam sollicitudin dapibus lectus, vitae consequat odio elementum eget. Praesent efficitur eros vitae nunc interdum, eu interdum justo facilisis. Sed pulvinar nulla ac dignissim efficitur. Quisque eget eros metus. Vestibulum bibendum fringilla nibh a luctus. Duis a sapien metus.
-                        </p>
-
-                        <p>
-                            Praesent consectetur orci dui, id elementum eros facilisis id. Sed id dolor in augue porttitor faucibus eget sit amet ante. Nunc consectetur placerat pharetra. Aenean gravida ex ut erat commodo, ut finibus metus facilisis. Nullam eget lectus non urna rhoncus accumsan quis id massa. Curabitur sit amet dolor nisl. Proin euismod, augue at condimentum rhoncus, massa lorem semper lacus, sed lobortis augue mi vel felis. Duis ultrices sapien at est convallis congue.
-                        </p>
-
-                        <p>
-                            Fusce porta diam ac tortor elementum, ut imperdiet metus volutpat. Suspendisse posuere dapibus maximus. Aliquam vitae felis libero. In vehicula sapien at semper ultrices. Vivamus sed feugiat libero. Sed sagittis neque id diam euismod, ut egestas felis ultricies. Nullam non fermentum mauris. Sed in enim ac turpis faucibus pretium in sit amet nisi.
+                            Everything you'll ever need to successfully release your next music project.
+                            Find local producers, graphic designers, and videographers that align with your vision
+                            and get to work!
                         </p>
                     </div>
                     <div className="grid-col grid-col_4">
@@ -41,6 +50,35 @@ class LandingPage extends Component {
                             Login
                         </button>
                     </div>
+                </div>
+                <h2>{this.state.team}</h2>
+                <p>Begin building out a timeline for you next song release. Schedule sessions with your producer,
+                    talk overall themes with your graphic designer, and shoot promotional material for social media
+                    with your videographer. Feel confident knowing when your vision will be seen and heard.
+                </p>
+                <div>
+                    <button onClick={this.producerRole}>
+                        <h3>Producer</h3>
+                        <p>Discover how arranging, recording, and mixing can help turn 
+                            your demo into a chart topping success.
+                        </p>
+                    </button>
+                    <span>
+                    <button onClick={this.graphicRole}>
+                        <h3>Graphic Designer</h3>
+                        <p>Meet one on one to discuss how you want your music to be presented. 
+                            High quality images that can be used across all platforms.
+                        </p>
+                    </button>
+                    </span>
+                    <span>
+                    <button onClick={this.videoRole}>
+                        <h3>Videographer</h3>
+                        <p>Strategize over where you want to engage with your listeners through photos, 
+                            promo clips, and music videos.
+                        </p>
+                    </button>
+                    </span>    
                 </div>
             </div>
         );
