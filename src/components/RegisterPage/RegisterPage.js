@@ -1,6 +1,11 @@
 import React, { Component } from 'react';
-import {connect} from 'react-redux';
+import { connect } from 'react-redux';
 import mapStoreToProps from '../../redux/mapStoreToProps';
+
+// Material UI
+import Radio from '@material-ui/core/Radio';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
+
 
 class RegisterPage extends Component {
   state = {
@@ -10,7 +15,12 @@ class RegisterPage extends Component {
     city: '',
     state: '',
     zipcode: '',
-    role_id: '',
+    role_id: {
+      artist: 1,
+      producer: 2,
+      graphic: 3,
+      video: 4,
+    },
   };
 
   registerUser = (event) => {
@@ -26,18 +36,26 @@ class RegisterPage extends Component {
           city: this.state.city,
           state: this.state.state,
           zipcode: this.state.zipcode,
-          role_id: this.state.role_id,
+          role_id: this.state.role_id
         },
       });
     } else {
-      this.props.dispatch({type: 'REGISTRATION_INPUT_ERROR'});
+      this.props.dispatch({ type: 'REGISTRATION_INPUT_ERROR' });
     }
   } // end registerUser
 
   handleInputChangeFor = propertyName => (event) => {
     this.setState({
+      role_id: {
+        ...this.state.role_id,
+        artist: 1,
+        producer: 2,
+        graphic: 3,
+        video: 4,
+      },
       [propertyName]: event.target.value,
     });
+    console.log(propertyName);
   }
 
   render() {
@@ -119,17 +137,42 @@ class RegisterPage extends Component {
               />
             </label>
           </div>
-          <div>
-            <label htmlFor="role_id">
-              Role ID:
-              <input
-                type="number"
-                name="role_id"
-                value={this.state.role_id}
-                onChange={this.handleInputChangeFor('role_id')}
-              />
-            </label>
-          </div>
+          <span>
+            <FormControlLabel
+              control={<Radio color="primary" />}
+              label="Artist"
+              labelPlacement="end"
+              value={this.state.role_id.artist}
+              onChange={this.handleInputChangeFor('role_id')}
+            />
+          </span>
+          <span>
+            <FormControlLabel
+              control={<Radio color="primary" />}
+              label="Producer"
+              labelPlacement="end"
+              value={this.state.role_id.producer}
+              onChange={this.handleInputChangeFor('role_id')}
+            />
+          </span>
+          <span>
+            <FormControlLabel
+              control={<Radio color="primary" />}
+              label="Graphic Designer"
+              labelPlacement="end"
+              value={this.state.role_id.graphic}
+              onChange={this.handleInputChangeFor('role_id')}
+            />
+          </span>
+          <span>
+            <FormControlLabel
+              control={<Radio color="primary" />}
+              label="Videographer"
+              labelPlacement="end"
+              value={this.state.role_id.video}
+              onChange={this.handleInputChangeFor('role_id')}
+            />
+          </span>
           <div>
             <input
               className="register"
@@ -143,7 +186,7 @@ class RegisterPage extends Component {
           <button
             type="button"
             className="link-button"
-            onClick={() => {this.props.dispatch({type: 'SET_TO_LOGIN_MODE'})}}
+            onClick={() => { this.props.dispatch({ type: 'SET_TO_LOGIN_MODE' }) }}
           >
             Login
           </button>
