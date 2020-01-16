@@ -5,7 +5,17 @@ import mapStoreToProps from '../../redux/mapStoreToProps';
 // Material UI
 import Radio from '@material-ui/core/Radio';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
+// import TextField from '@material-ui/core/TextField';
+// import { makeStyles } from '@material-ui/core/styles';
 
+// const useStyles = makeStyles(theme => ({
+//   root: {
+//     '& .MuiTextField-root': {
+//       margin: theme.spacing(1),
+//       width: 200,
+//     },
+//   },
+// }));
 
 class RegisterPage extends Component {
   state = {
@@ -59,6 +69,7 @@ class RegisterPage extends Component {
   }
 
   render() {
+    // const classes = useStyles();
     return (
       <div>
         {this.props.errors.registrationMessage && (
@@ -69,11 +80,11 @@ class RegisterPage extends Component {
             {this.props.errors.registrationMessage}
           </h2>
         )}
-        <form onSubmit={this.registerUser}>
+        <form onSubmit={this.registerUser} >
           <h1>Register User</h1>
           <div>
             <label htmlFor="username">
-              Username:
+              Password:
               <input
                 type="text"
                 name="username"
