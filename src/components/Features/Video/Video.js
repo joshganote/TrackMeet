@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import mapStoreToProps from '../../../redux/mapStoreToProps';
 
-class TemplateClass extends Component {
+class Video extends Component {
     state = {
         heading: 'Videographer',
     };
@@ -16,4 +16,4 @@ class TemplateClass extends Component {
     }
 }
 
-export default connect(mapStoreToProps)(TemplateClass);
+export default connect(mapStoreToProps)(Video);
