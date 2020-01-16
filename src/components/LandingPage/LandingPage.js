@@ -12,7 +12,25 @@ class LandingPage extends Component {
     state = {
         heading: 'TrackMeet',
         team: 'Meet Your Team',
+        release: 'Release Ready',
+        contact: {
+            message: '',
+            email: '',
+            name: ''
+        },
     };
+
+    handleInputChangeFor = propertyName => (event) => {
+        this.setState({
+            contact: {
+                ...this.state.contact,
+                message: '',
+                email: '',
+                name: '',
+            },
+            [propertyName]: event.target.value,
+        });
+    }
 
     onLogin = (event) => {
         this.props.history.push('/login');
@@ -59,26 +77,70 @@ class LandingPage extends Component {
                 <div>
                     <button onClick={this.producerRole}>
                         <h3>Producer</h3>
-                        <p>Discover how arranging, recording, and mixing can help turn 
+                        <p>Discover how arranging, recording, and mixing can help turn
                             your demo into a chart topping success.
                         </p>
                     </button>
                     <span>
-                    <button onClick={this.graphicRole}>
-                        <h3>Graphic Designer</h3>
-                        <p>Meet one on one to discuss how you want your music to be presented. 
-                            High quality images that can be used across all platforms.
+                        <button onClick={this.graphicRole}>
+                            <h3>Graphic Designer</h3>
+                            <p>Meet one on one to discuss how you want your music to be presented.
+                                High quality images that can be used across all platforms.
                         </p>
-                    </button>
+                        </button>
                     </span>
                     <span>
-                    <button onClick={this.videoRole}>
-                        <h3>Videographer</h3>
-                        <p>Strategize over where you want to engage with your listeners through photos, 
-                            promo clips, and music videos.
+                        <button onClick={this.videoRole}>
+                            <h3>Videographer</h3>
+                            <p>Strategize over where you want to engage with your listeners through photos,
+                                promo clips, and music videos.
                         </p>
-                    </button>
-                    </span>    
+                        </button>
+                    </span>
+                </div>
+                <div>
+                    <h3>{this.state.release}</h3>
+                    <p>
+                        Take away all the fear of knowing where to start with your next music project. Get ready
+                        to assemble the team that will guide you through every step of the music releasing process.
+                    </p>
+                    <p>Need 3 images here</p>
+                </div>
+                <div>
+                    <h3>Write Us A Verse</h3>
+                    <div>
+                        <label htmlFor="message">
+                            <input
+                                type="text"
+                                name="Message"
+                                placeholder="Message"
+                                value={this.state.contact.message}
+                                onChange={this.handleInputChangeFor('contact')}
+                            />
+                        </label>
+                    </div>
+                    <div>
+                        <label htmlFor="email">
+                            <input
+                                type="text"
+                                name="Email"
+                                placeholder="Email"
+                                value={this.state.contact.email}
+                                onChange={this.handleInputChangeFor('contact')}
+                            />
+                        </label>
+                    </div>
+                    <div>
+                        <label htmlFor="name">
+                            <input
+                                type="text"
+                                name="Name"
+                                placeholder="Name"
+                                value={this.state.contact.name}
+                                onChange={this.handleInputChangeFor('contact')}
+                            />
+                        </label>
+                    </div>
                 </div>
             </div>
         );
