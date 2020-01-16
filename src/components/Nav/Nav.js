@@ -32,12 +32,12 @@ const Nav = (props) => (
           <Link className="nav-link" to="/messages">
             Messages
           </Link>
-          <Link className="nav-link" to="/contact">
-            Contact
-          </Link>
           <LogOutButton className="nav-link"/>
         </>
       )}
+      <Link className="nav-link" to="/contact">
+            Contact
+      </Link>
       {/* Always show this link since the about page is not protected */}
       <Link className="nav-link" to="/about">
         About
