@@ -25,6 +25,18 @@ router.post('/register', (req, res, next) => {
   const role_id = req.body.role_id;
   const lat = req.body.lat;
   const long = req.body.long;
+  // expected data structure
+  // {
+  //   username: UNIQUE NOT NULL,
+  //   password:  NOT NULL,
+  //   street_address:  NOT NULL,
+  //   city: NOT NULL,
+  //   state: NOT NULL,
+  //   zipcode:  NOT NULL,
+  //   role_id: INT REFERENCES "user_roles" NOT NULL,   
+  //   lat:  does not show up on registration Form. Google map api should take care of this,
+  //   long: does not show up on registration Form. Google map api should take care of this,
+  // }
   
 
   const queryText = 'INSERT INTO "user" (username, password, street_address, city, state, zipcode, role_id, lat, long) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING id';
