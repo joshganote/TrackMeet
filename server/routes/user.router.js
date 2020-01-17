@@ -11,6 +11,21 @@ router.get('/', rejectUnauthenticated, (req, res) => {
   // Send back user object from the session (previously queried from the database)
   res.send(req.user);
 });
+router.get('/profile', (req, res) => {
+  const queryText = `SELECT * FROM "user"
+                    JOIN "user_roles" ON "user"."role_id" = "user_roles"."id"
+                    JOIN "portfolio" ON "user"."id" = "portfolio"."user_id"
+                    JOIN "profile" ON "user"."id" = "profile"."user_id"
+                    JOIN "project" ON "user"."id" = "project"."artist_id";`;
+  pool.query(queryText)
+      .then((response) =>{
+        res.send(response.rows);
+      })
+      .catch((err) => {
+        console.log(err);
+        res.sendStatus(500);
+      })
+})
 
 // Handles POST request with new user data
 // The only thing different from this and every other post we've seen
