@@ -13,6 +13,7 @@ const rootReducer = combineReducers({
   errors, // contains registrationMessage and loginMessage
   loginMode, // will have a value of 'login' or 'registration' to control which screen is shown
   user, // will have an id and username if someone is logged in
+  profile, // expecting get back data from user, user_roles, profile, and project table from database
 });
 
 export default rootReducer;
