@@ -1,4 +1,4 @@
-const profileReducer = (state = {}, action) => {
+const profile = (state = {}, action) => {
     switch (action.type) {
       case 'SET_PROFILE':
         return action.payload;
@@ -8,4 +8,4 @@ const profileReducer = (state = {}, action) => {
         return state;
     }
   };
-  export default profileReducer;  
+  export default profile;  
