@@ -10,11 +10,19 @@ class Profile extends Component {
         newBio: '',
     };
 
+    componentDidMount() {
+        this.props.dispatch({
+            type: 'GET_PROFILE',
+            payload: this.props.store.profile.id
+        })
+    }
     handleChangeBio = (event) => {
         this.setState({
             newBio: event.target.value
         })
     }
+    // input field to change bio isn't visible until 
+    // edit bio button is clicked
     editBio = (event) => {
         this.setState({
             newBio: this.state.bio,
@@ -43,7 +51,7 @@ class Profile extends Component {
                 {this.state.bioIsEditable ?
                     <input
                         type="text"
-                        placeholder="Username"
+                        placeholder="Edit Bio"
                         value={this.state.newBio}
                         onChange={this.handleChangeBio}
                     /> :
