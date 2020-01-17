@@ -13,7 +13,6 @@ class Profile extends Component {
     componentDidMount() {
         this.props.dispatch({
             type: 'GET_PROFILE',
-            payload: this.props.store.profile.id
         })
     }
     handleChangeBio = (event) => {
@@ -46,7 +45,7 @@ class Profile extends Component {
                 <br />
                 {this.props.store.user.city}
                 <br />
-                {this.props.store.user.bio}
+                {this.props.store.profile.bio}
                 <br />
                 {this.state.bioIsEditable ?
                     <input
