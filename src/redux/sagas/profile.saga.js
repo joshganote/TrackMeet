@@ -3,7 +3,7 @@ import axios from 'axios';
 
 function* profileUser(action) {
     try{
-        const response = yield axios.get(`/api/user/profile/${action.payload}`);
+        const response = yield axios.get(`/api/profile/${action.payload}`);
         yield put({
             type: 'SET_PROFILE',
             payload: response.data
