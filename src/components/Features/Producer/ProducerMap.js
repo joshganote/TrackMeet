@@ -6,8 +6,8 @@ const AnyReactComponent = ({ text }) => <div>{text}</div>;
 class ProducerMap extends Component {
   static defaultProps = {
     center: {
-      lat: 59.95,
-      lng: 30.33
+      lat: 39.100105,
+      lng: -94.5781416
     },
     zoom: 11
   };
@@ -17,7 +17,7 @@ class ProducerMap extends Component {
       // Important! Always set the container height explicitly
       <div style={{ height: '50vh', width: '50%' }}>
         <GoogleMapReact
-          bootstrapURLKeys={{ key: process.env.GOOGLE_API }}
+          bootstrapURLKeys={{ key: process.env.REACT_APP_GOOGLE_MAPS}}
           defaultCenter={this.props.center}
           defaultZoom={this.props.zoom}
         >

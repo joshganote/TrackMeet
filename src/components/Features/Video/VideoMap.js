@@ -17,7 +17,7 @@ class VideoMap extends Component {
       // Important! Always set the container height explicitly
       <div style={{ height: '50vh', width: '50%' }}>
         <GoogleMapReact
-          bootstrapURLKeys={{ key: process.env.GOOGLE_API }}
+          bootstrapURLKeys={{ key: process.env.REACT_APP_GOOGLE_MAPS}}
           defaultCenter={this.props.center}
           defaultZoom={this.props.zoom}
         >
