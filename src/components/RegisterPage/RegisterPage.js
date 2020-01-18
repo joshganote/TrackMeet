@@ -46,7 +46,7 @@ class RegisterPage extends Component {
           city: this.state.city,
           state: this.state.state,
           zipcode: this.state.zipcode,
-          role_id: this.state.role_id
+          role_id: this.state.role_id,
         },
       });
     } else {
@@ -84,7 +84,7 @@ class RegisterPage extends Component {
           <h1>Register User</h1>
           <div>
             <label htmlFor="username">
-              Password:
+              Username:
               <input
                 type="text"
                 name="username"
