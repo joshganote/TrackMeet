@@ -12,12 +12,26 @@ router.get('/', rejectUnauthenticated, (req, res) => {
   res.send(req.user);
 });
 
+//GET user with specific id
+router.get('/single/:id', (req,res) => {
+  const userID = req.params.id;
+  const queryText = `SELECT * FROM "user" WHERE "user"."id" = $1;`;
+  pool.query(queryText, [userID])
+  .then((response) => {
+    res.send(response.rows);
+  })
+  .catch((err) =>{
+    console.log('error with getting user id',err);
+    res.sendStatus(500);
+  })
+})
+
 //GET all producers from user table with a role id of 2
 router.get('/producer', (req,res) => {
   const queryText = `SELECT * FROM "user" WHERE "role_id" = '2';`;
   pool.query(queryText)
   .then((response) => {
-    res.send(response.rows);
+    res.send([...response.rows]);
   })
   .catch((err) =>{
     console.log(err);
