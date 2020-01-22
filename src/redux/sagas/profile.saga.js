@@ -9,6 +9,7 @@ function* profileUser(action) {
         console.log(response);
         yield put({
             type: 'SET_PROFILE',
+            
             payload: {
                 ...response.data
             }
