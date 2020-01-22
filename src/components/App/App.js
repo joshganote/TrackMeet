@@ -25,6 +25,9 @@ import featureVideo from '../Features/Video/Video';
 import Contact from '../Contact/Contact';
 import Messages from '../Message/Message';
 import Profile from '../Profile/Profile';
+import ViewProducerProfile from '../ViewProfile/ViewProducerProfile';
+import ViewGraphicProfile from '../ViewProfile/ViewGraphicProfile';
+import ViewVideoProfile from '../ViewProfile/ViewVideoProfile';
 
 import './App.css';
 
@@ -82,6 +85,21 @@ class App extends Component {
               exact
               path="/profile"
               component={Profile}
+            />
+             <Route
+              exact
+              path="/view-producer-profile"
+              component={ViewProducerProfile}
+            />
+            <Route
+              exact
+              path="/view-graphic-profile"
+              component={ViewGraphicProfile}
+            />
+            <Route
+              exact
+              path="/view-video-profile"
+              component={ViewVideoProfile}
             />
             {/* For protected routes, the view could show one of several things on the same route.
             Visiting localhost:3000/user will show the UserPage if the user is logged in.
