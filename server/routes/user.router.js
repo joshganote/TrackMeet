@@ -12,6 +12,42 @@ router.get('/', rejectUnauthenticated, (req, res) => {
   res.send(req.user);
 });
 
+//GET all producers from user table with a role id of 2
+router.get('/producer', (req,res) => {
+  const queryText = `SELECT * FROM "user" WHERE "role_id" = '2';`;
+  pool.query(queryText)
+  .then((response) => {
+    res.send(response.rows);
+  })
+  .catch((err) =>{
+    console.log(err);
+    res.sendStatus(500);
+  })
+})
+//GET all graphic designers from user table with a role id of 3
+router.get('/graphic', (req,res) => {
+  const queryText = `SELECT * FROM "user" WHERE "role_id" = '3';`;
+  pool.query(queryText)
+  .then((response) => {
+    res.send(response.rows);
+  })
+  .catch((err) =>{
+    console.log(err);
+    res.sendStatus(500);
+  })
+})
+//GET all videographers from user table with a role id of 4
+router.get('/video', (req,res) => {
+  const queryText = `SELECT * FROM "user" WHERE "role_id" = '4';`;
+  pool.query(queryText)
+  .then((response) => {
+    res.send(response.rows);
+  })
+  .catch((err) =>{
+    console.log(err);
+    res.sendStatus(500);
+  })
+})
 // Handles POST request with new user data
 // The only thing different from this and every other post we've seen
 // is that the password gets encrypted before being inserted
@@ -37,8 +73,6 @@ router.post('/register', (req, res, next) => {
   //   lat:  does not show up on registration Form. Google map api should take care of this,
   //   long: does not show up on registration Form. Google map api should take care of this,
   // }
-  
-
   const queryText = 'INSERT INTO "user" (username, password, street_address, city, state, zipcode, role_id, lat, long) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING id';
   pool.query(queryText, [username, password, street_address, city, state, zipcode, role_id, lat, long])
     .then(() => res.sendStatus(201))
