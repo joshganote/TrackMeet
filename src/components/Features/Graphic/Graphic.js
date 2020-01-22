@@ -2,18 +2,24 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import mapStoreToProps from '../../../redux/mapStoreToProps';
 import GraphicMap from '../Graphic/GraphicMap';
+import GraphicList from '../Graphic/GraphicList';
 
 
 class Graphic extends Component {
     state = {
         heading: 'Graphic Designer',
     };
+    componentDidMount() {
+        this.props.dispatch({
+            type: 'GET_GRAPHIC',
+        })
+    }
 
     render() {
         return (
             <div>
                 <h2>{this.state.heading}</h2>
-                <p>once page loads it just shows "My Marker". Refreash page and it shows the outline of the map with error." </p>
+                <GraphicList graphic={this.props.store.graphic} />
                 <GraphicMap />
             </div>
         );
