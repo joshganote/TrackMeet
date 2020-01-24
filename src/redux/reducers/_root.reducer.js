@@ -5,6 +5,7 @@ import user from './user.reducer';
 import profile from './profile.reducer';
 import user_role from './user_role.reducer';
 import selected_user from './selected_user.reducer';
+import messages from './messages.reducer';
 
 // rootReducer is the primary reducer for our entire project
 // It bundles up all of the other reducers so our project can use them.
@@ -19,6 +20,7 @@ const rootReducer = combineReducers({
   profile, // expecting get back data from user, user_roles, profile, and project table from database
   user_role, // contains user table data from all users with a specific user role
   selected_user, // contains user table data for one specific user: id
+  messages, // retrieve all data from communication table
 });
 
 export default rootReducer;
