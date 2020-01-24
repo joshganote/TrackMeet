@@ -10,9 +10,9 @@ class ImageUpload extends Component {
         //console.log('File uploaded with filename', info.filename)
         console.log('Access it on s3 at', info.fileUrl)
 
-        this.props.dispatch(({ type: 'PUT_IMAGE_URL', payload: info.fileUrl})); 
+        this.props.dispatch(({ type: 'PUT_IMAGE_URL', payload: info.fileUrl }));
         this.props.toggle();
-      }
+    }
 
     render() {
         const uploadOptions = {
@@ -24,13 +24,15 @@ class ImageUpload extends Component {
 
         return (
             <div>
-            <DropzoneS3Uploader
-                onFinish={this.handleFinishedUpload}
-                s3Url={s3Url}
-                maxSize={1024 * 1024 * 5}
-                upload={uploadOptions}
-            />
-            <button onClick={this.props.toggle}>Cancel</button>
+                <div>
+                    <DropzoneS3Uploader
+                        onFinish={this.handleFinishedUpload}
+                        s3Url={s3Url}
+                        maxSize={1024 * 1024 * 5}
+                        upload={uploadOptions}
+                    />
+                    <button onClick={this.props.toggle}>Cancel</button>
+                </div>
             </div>
         )
     }
