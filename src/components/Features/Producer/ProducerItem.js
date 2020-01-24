@@ -17,6 +17,7 @@ class ProducerItem extends Component {
         return (
             <div onClick={this.clickToProfile}>
                 <img src={this.props.item.profile_img} alt="profile picture" />
+                <p>{this.props.item.username}</p>
                 <p>{this.props.item.bio}</p>
             </div>
         );
