@@ -18,8 +18,8 @@ class Producer extends Component {
         return (
             <div>
                 <h2>{this.state.heading}</h2>
-                <ProducerList producer={this.props.store.producer} />
                 <ProducerMap />
+                <ProducerList producer={this.props.store.producer} />
             </div>
         );
     }
