@@ -62,6 +62,7 @@ router.get('/video', (req,res) => {
     res.sendStatus(500);
   })
 })
+
 // Handles POST request with new user data
 // The only thing different from this and every other post we've seen
 // is that the password gets encrypted before being inserted
