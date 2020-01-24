@@ -18,8 +18,8 @@ class Video extends Component {
         return (
             <div>
                 <h2>{this.state.heading}</h2>
-                <VideoList video={this.props.store.video} />
                 <VideoMap />
+                <VideoList video={this.props.store.video} />
             </div>
         );
     }

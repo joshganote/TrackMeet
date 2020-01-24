@@ -19,8 +19,8 @@ class Graphic extends Component {
         return (
             <div>
                 <h2>{this.state.heading}</h2>
-                <GraphicList graphic={this.props.store.graphic} />
                 <GraphicMap />
+                <GraphicList graphic={this.props.store.graphic} />
             </div>
         );
     }
