@@ -21,6 +21,7 @@ router.get('/:id', (req, res) => {
     })
 })
 
+// Allows user to add a profile image
 router.put('/profile-pic', (req, res) => {
   const queryString = `UPDATE "user" SET "profile_img" = $1 WHERE "id" = $2;`;
 
@@ -34,7 +35,7 @@ router.put('/profile-pic', (req, res) => {
       res.sendStatus(500);
     })
 });
-
+// Allows user to add a bio
 router.put('/bio', (req, res) => {
     const queryString = `UPDATE "user" SET "bio" = $1 WHERE "id" = $2;`;
 
