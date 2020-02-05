@@ -2,9 +2,9 @@
 Container
 -------------------------------------------------------------------------------- */
 
-.container {
+/* .container {
     padding: 20px;
-}
+} */
 
 /* --------------------------------------------------------------------------------
 Button
@@ -28,7 +28,7 @@ Button
 
 .btn_sizeFull {
     display: block;
-    width: 100%;
+    width: 25%;
 }
 
 .btn:hover {
@@ -55,6 +55,8 @@ Grid
     flex: 0 0 auto;
     padding: 0 0.5rem 0.5rem;
     box-sizing: border-box;
+    
+    
 }
 
 .grid-col_1 {
@@ -73,8 +75,8 @@ Grid
 }
 
 .grid-col_4 {
-    flex-basis: 33.33333333%;
-    max-width: 33.33333333%;
+    flex-basis: 100%;
+    max-width: 100%;
 }
 
 .grid-col_5 {
@@ -93,8 +95,8 @@ Grid
 }
 
 .grid-col_8 {
-    flex-basis: 66.66666667%;
-    max-width: 66.66666667%;
+    flex-basis: 100%;
+    max-width: 100%;
 }
 
 .grid-col_9 {
@@ -116,3 +118,118 @@ Grid
     flex-basis: 100%;
     max-width: 100%;
 }
+
+/*-----------------------
+Releaser Yourself Section
+-----------------------*/
+.release-container {
+    background-color: coral;
+}
+.main-section {
+    padding-left: 20%;
+}
+
+.release-yourself {
+    flex-basis: 75%;
+    max-width: 75%;
+}
+
+.release {
+    font-size: 50px;
+}
+
+.member {
+    font-size: 25px;
+}
+
+/*-----------------------
+ Meet Your Team Section
+-----------------------*/
+.features-container {
+    padding: 20px;
+}
+.team-heading {
+    text-align: center;
+    padding-left: 25%;
+    max-width: 50%;
+}
+
+.team-header {
+    font-size: 50px;
+}
+
+.producer-container{
+    text-align: center;
+    border: 2px solid black;
+}
+
+.producer {
+    color: #f2f2f2;
+    background-color: rgb(83, 83, 255);
+    padding: 5px;
+ 
+}
+
+.producer-text {
+    text-align: center;
+}
+
+.graphic-container{
+    text-align: center;
+    border: 2px solid black;
+}
+
+.graphic {
+    color: #f2f2f2;
+    background-color: rgb(83, 83, 255);
+    padding: 5px;
+ 
+}
+
+.graphic-text {
+    text-align: center;
+}
+
+.video-container{
+    text-align: center;
+    border: 2px solid black;
+}
+
+.video {
+    color: #f2f2f2;
+    background-color: rgb(83, 83, 255);
+    padding: 5px;
+ 
+}
+
+.video-text {
+    text-align: center;
+}
+
+.ready-section {
+    max-width: 35%;
+}
+.ready-header {
+    font-size: 50px;
+}
+
+.about-section {
+    text-align: center;
+    padding-left: 25%;
+    max-width: 50%;
+}
+
+.about-header {
+    font-size: 50px;
+}
+
+.contact-section {
+    text-align: center;
+    padding-left: 25%;
+    max-width: 50%;
+}
+
+.contact-text {
+    font-size: 50px;
+}
+
