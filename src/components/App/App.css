@@ -47,3 +47,19 @@ input {
     border-bottom:1px solid #444; 
     cursor: pointer;
 }
+
+.main-section {
+    height: 50vh;
+}
+
+.features-section {
+    height: 50vh;
+}
+
+.about-section {
+    height: 30vh;
+}
+
+.contact-section {
+    height: 30vh;
+}
