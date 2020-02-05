@@ -4,11 +4,12 @@ import { connect } from 'react-redux';
 import LogOutButton from '../LogOutButton/LogOutButton';
 import './Nav.css';
 import mapStoreToProps from '../../redux/mapStoreToProps';
+//import { Link } from 'react-scroll';
 
 const Nav = (props) => (
   <div className="nav">
     <Link to="/home">
-      <h2 className="nav-title">Prime Solo Project</h2>
+      <h2 className="nav-title">TrackMeet</h2>
     </Link>
     <div className="nav-right">
       <Link className="nav-link" to="/home">
@@ -39,10 +40,10 @@ const Nav = (props) => (
       <Link className="nav-link" to="/contact">
             Contact
       </Link>
-      {/* Always show this link since the about page is not protected */}
       <Link className="nav-link" to="/about">
         About
       </Link>
+      {/* Always show this link since the about page is not protected */}
     </div>
   </div>
 );
