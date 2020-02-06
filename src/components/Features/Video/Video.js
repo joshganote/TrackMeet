@@ -6,7 +6,7 @@ import VideoList from '../Video/VideoList';
 
 class Video extends Component {
     state = {
-        heading: 'Videographer',
+        heading: 'Photographer',
     };
     componentDidMount() {
         this.props.dispatch({

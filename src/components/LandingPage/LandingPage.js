@@ -46,7 +46,7 @@ class LandingPage extends Component {
         this.props.history.push('/features/graphic-designer');
     }
     videoRole = (event) => {
-        this.props.history.push('/features/videographer');
+        this.props.history.push('/features/photographer');
     }
 
     render() {
@@ -80,12 +80,11 @@ class LandingPage extends Component {
                         </Grid>
                     </Grid>
                 </div>
-
                 <div className="team-heading">
                     <h2 className="team-header">Meet Your Team</h2>
                     <p>Begin building out a timeline for you next song release. Schedule sessions with your producer,
                         talk overall themes with your graphic designer, and shoot promotional material for social media
-                        with your videographer. Feel confident knowing when your vision will be seen and heard.
+                        with your photographer. Feel confident knowing when your vision will be seen and heard.
                         </p>
                 </div>
                 <div className="features-container">
@@ -127,7 +126,7 @@ class LandingPage extends Component {
                                 <Button onClick={this.videoRole}>
                                     <div>
                                         <div className="video">
-                                            <h3>videographer</h3>
+                                            <h3>Photographer</h3>
                                         </div>
                                         <div className="video-text">
                                             <p>Strategize over where you want to engage with your listeners through photos,

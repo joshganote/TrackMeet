@@ -68,7 +68,7 @@ class App extends Component {
             />
             <Route
               exact
-              path="/features/videographer"
+              path="/features/photographer"
               component={featureVideo}
             />
             <Route

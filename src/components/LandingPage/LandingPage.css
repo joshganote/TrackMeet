@@ -142,6 +142,8 @@ Releaser Yourself Section
     font-size: 25px;
 }
 
+
+
 /*-----------------------
  Meet Your Team Section
 -----------------------*/
@@ -154,6 +156,9 @@ Releaser Yourself Section
     max-width: 50%;
 }
 
+/*-----------------------
+ Features Section
+-----------------------*/
 .team-header {
     font-size: 50px;
 }
@@ -206,12 +211,19 @@ Releaser Yourself Section
     text-align: center;
 }
 
+/*-----------------------
+ Release Section
+-----------------------*/
 .ready-section {
     max-width: 35%;
 }
 .ready-header {
     font-size: 50px;
 }
+
+/*-----------------------
+ About Section
+-----------------------*/
 
 .about-section {
     text-align: center;
@@ -223,6 +235,9 @@ Releaser Yourself Section
     font-size: 50px;
 }
 
+/*-----------------------
+Contact Section
+-----------------------*/
 .contact-section {
     text-align: center;
     padding-left: 25%;
